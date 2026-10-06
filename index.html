@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" href="./assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" href="./assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" href="./assets/Lora-VariableFont_wght-CZceb_kH.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Regular-Bam3NpBI.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Bold-C_DwAp7Z.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Regular-CEsLFVD9.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Medium-D5MAsWEG.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Bold-C6PDArdf.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        const scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          // Guard against race condition where iframe isn't ready
+          if (!obj.contentWindow?.document?.documentElement) {
+            return;
+          }
+          const element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          const hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          const newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((_entries) => {
+          setHeight();
+        });
+        // Only observe if iframe content is ready
+        if (obj.contentWindow?.document?.body) {
+          resizeObserver.observe(obj.contentWindow.document.body);
+        }
+      }
+    </script>
+    <marimo-filename hidden>notebook.py</marimo-filename>
+    <!-- TODO(Trevor): Legacy, required by VS Code plugin. Remove when plugin is updated (see marimo/server/_templates/template.py) -->
+    <marimo-version data-version="{{ version }}" hidden></marimo-version>
+    <marimo-user-config data-config="{{ user_config }}" hidden></marimo-user-config>
+    <marimo-server-token data-token="{{ server_token }}" hidden></marimo-server-token>
+    <!-- /TODO -->
+    <title>eval</title>
+    <script type="module" crossorigin src="./assets/index-DafnX1Xx.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-B0Z9INg1.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-CUdNIagt.js">
+    <link rel="modulepreload" crossorigin href="./assets/compiler-runtime-BQ9S8nyo.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEvent-Dc9HkKI2.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-dom-CKsE8sC1.js">
+    <link rel="modulepreload" crossorigin href="./assets/schemas-BL-NsLlF.js">
+    <link rel="modulepreload" crossorigin href="./assets/isObject-BCaOs5rp.js">
+    <link rel="modulepreload" crossorigin href="./assets/isSymbol-oX0TOjjx.js">
+    <link rel="modulepreload" crossorigin href="./assets/now-Cmx0b_zA.js">
+    <link rel="modulepreload" crossorigin href="./assets/debounce-aFmHgJZY.js">
+    <link rel="modulepreload" crossorigin href="./assets/isArrayLikeObject-DnwgSs_Z.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseMerge-CQpUq7ep.js">
+    <link rel="modulepreload" crossorigin href="./assets/objects-snlMn4yk.js">
+    <link rel="modulepreload" crossorigin href="./assets/jsx-runtime-B74pBk57.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEventListener-BdZUApHd.js">
+    <link rel="modulepreload" crossorigin href="./assets/invariant-Ci2dTZ72.js">
+    <link rel="modulepreload" crossorigin href="./assets/config-BxZgoFvi.js">
+    <link rel="modulepreload" crossorigin href="./assets/utils-B4K466FK.js">
+    <link rel="modulepreload" crossorigin href="./assets/session-DXKMv4Bs.js">
+    <link rel="modulepreload" crossorigin href="./assets/Deferred-CrTnjj37.js">
+    <link rel="modulepreload" crossorigin href="./assets/config-DpGPGznL.js">
+    <link rel="modulepreload" crossorigin href="./assets/clsx-DB0hHKMi.js">
+    <link rel="modulepreload" crossorigin href="./assets/cn-ldLVeaqm.js">
+    <link rel="modulepreload" crossorigin href="./assets/fullscreen-BmzAqMKq.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-CyYN7zJg.js">
+    <link rel="modulepreload" crossorigin href="./assets/menu-items-BBdeXCvU.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-restore-focus-B98SEiGc.js">
+    <link rel="modulepreload" crossorigin href="./assets/button-BoklZTGL.js">
+    <link rel="modulepreload" crossorigin href="./assets/createLucideIcon-rHn2EdoM.js">
+    <link rel="modulepreload" crossorigin href="./assets/check-Wea4hZ6R.js">
+    <link rel="modulepreload" crossorigin href="./assets/context-BFOBKCJB.js">
+    <link rel="modulepreload" crossorigin href="./assets/useNumberFormatter-C4-_TnkF.js">
+    <link rel="modulepreload" crossorigin href="./assets/select-BplWpfFo.js">
+    <link rel="modulepreload" crossorigin href="./assets/circle-CeQt3rdW.js">
+    <link rel="modulepreload" crossorigin href="./assets/toast-KNfsFUiB.js">
+    <link rel="modulepreload" crossorigin href="./assets/tooltip-DR2Z2N4w.js">
+    <link rel="modulepreload" crossorigin href="./assets/paths-CzfpItSz.js">
+    <link rel="modulepreload" crossorigin href="./assets/useLifecycle-DKSBdWUf.js">
+    <link rel="modulepreload" crossorigin href="./assets/toDate-BbJ1_N2T.js">
+    <link rel="modulepreload" crossorigin href="./assets/database-zap-CrkOvbyN.js">
+    <link rel="modulepreload" crossorigin href="./assets/alert-dialog-CeE3i3Qa.js">
+    <link rel="modulepreload" crossorigin href="./assets/arrays-BqUx5USx.js">
+    <link rel="modulepreload" crossorigin href="./assets/once-Haz_uxEL.js">
+    <link rel="modulepreload" crossorigin href="./assets/numbers-DsgsDslU.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDebounce-DMbg9X18.js">
+    <link rel="modulepreload" crossorigin href="./assets/input-BDakodZ2.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-toast-CC89xOwH.js">
+    <link rel="modulepreload" crossorigin href="./assets/requests-yTHMxhVa.js">
+    <link rel="modulepreload" crossorigin href="./assets/uuid-k9DpjH68.js">
+    <link rel="modulepreload" crossorigin href="./assets/write-secret-modal-BiG2tahJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/plus-gbN72xHe.js">
+    <link rel="modulepreload" crossorigin href="./assets/trash-2-BJG-7Qob.js">
+    <link rel="modulepreload" crossorigin href="./assets/preload-helper-HclGiUj8.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BczecT6V.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BTskHGpb.js">
+    <link rel="modulepreload" crossorigin href="./assets/capabilities-Bj3s1hGN.js">
+    <link rel="modulepreload" crossorigin href="./assets/cjs-C49f7GXV.js">
+    <link rel="modulepreload" crossorigin href="./assets/createReducer-BPvK7C_R.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-Ccyblc8N.js">
+    <link rel="modulepreload" crossorigin href="./assets/marked.esm-B_3iMIUq.js">
+    <link rel="modulepreload" crossorigin href="./assets/strings-BHZPE0Mc.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BN-7G8qZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/badge-DFf033uX.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-CiUBikfn.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-MRn68vX1.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-Bviq_Dee.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DBqBVprh.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DueXZKz9.js">
+    <link rel="modulepreload" crossorigin href="./assets/stex-CJTNBbet.js">
+    <link rel="modulepreload" crossorigin href="./assets/useTheme-DcnXlv0_.js">
+    <link rel="modulepreload" crossorigin href="./assets/useAsyncData-DucTwMkf.js">
+    <link rel="modulepreload" crossorigin href="./assets/purify.es-CYRiAeUx.js">
+    <link rel="modulepreload" crossorigin href="./assets/cells-CzugpTQu.js">
+    <link rel="modulepreload" crossorigin href="./assets/get-DjNf4SIX.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-RyCOE8jo.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-BhJktFeI.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-icon-DFhUGBjO.js">
+    <link rel="modulepreload" crossorigin href="./assets/ErrorBoundary-BeE1cdgM.js">
+    <link rel="modulepreload" crossorigin href="./assets/config-B4VJJibu.js">
+    <link rel="modulepreload" crossorigin href="./assets/chevron-right-DOPs2jx8.js">
+    <link rel="modulepreload" crossorigin href="./assets/dropdown-menu-VuyoeQOD.js">
+    <link rel="modulepreload" crossorigin href="./assets/LazyAnyLanguageCodeMirror-B_IYTCX5.js">
+    <link rel="modulepreload" crossorigin href="./assets/hat-glasses-DVgK5i5l.js">
+    <link rel="modulepreload" crossorigin href="./assets/package-BeYhVWvM.js">
+    <link rel="modulepreload" crossorigin href="./assets/errors-D9vyuMar.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-CNPGWpMu.js">
+    <link rel="modulepreload" crossorigin href="./assets/precisionRound-Bq_nmf5u.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-D5bOh7g6.js">
+    <link rel="modulepreload" crossorigin href="./assets/vega-loader.browser-CLRkNgm7.js">
+    <link rel="modulepreload" crossorigin href="./assets/tooltip-PLkI_UfK.js">
+    <link rel="modulepreload" crossorigin href="./assets/filename-fxG7K_MU.js">
+    <link rel="modulepreload" crossorigin href="./assets/micromark-factory-space-D9Dr-k4J.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-YOKDWASO-CaoEAGJk.js">
+    <link rel="stylesheet" crossorigin href="./assets/cells-0PFKL3SH.css">
+    <link rel="stylesheet" crossorigin href="./assets/index--sT8xf-8.css">
+  <marimo-wasm hidden=""></marimo-wasm>
+    <script>
+        if (window.location.protocol === 'file:') {
+            alert('Warning: This file must be served by an HTTP server to function correctly.');
+        }
+    </script>
+    
+    <style>
+        #save-button {
+            display: none !important;
+        }
+        #filename-input {
+            display: none !important;
+        }
+    </style>
+    
+<script data-marimo="true">
+    Object.defineProperty(window, "__MARIMO_EXPORT_CONTEXT__", {
+        value: Object.freeze({
+            trusted: true,
+            notebookCode: "# /// script\n# requires-python = \"\u003E=3.11\"\n# dependencies = [\n#     \"marimo\",\n#     \"pandas\",\n#     \"altair\",\n# ]\n# ///\n\nimport marimo\n\n__generated_with = \"0.25.1\"\napp = marimo.App(width=\"medium\")\n\n\n@app.cell\ndef _():\n    import marimo as mo\n\n    return (mo,)\n\n\n@app.cell\ndef _():\n    import io\n    import json\n    import sys\n\n    import altair as alt\n    import pandas as pd\n\n    return alt, io, json, pd, sys\n\n\n@app.cell\ndef _(io, mo, sys):\n    IN_BROWSER = sys.platform == \"emscripten\"\n\n    def read_text(rel: str) -\u003E str:\n        \"\"\"\u672c\u5730\u8b80\u6a94\uff1b\u5728\u700f\u89bd\u5668\uff08WASM\uff09\u5167\u5247\u5f9e\u540c\u4e00\u7db2\u5740\u8b80\u53d6\u3002\"\"\"\n        loc = mo.notebook_location() / rel\n        if IN_BROWSER:\n            from pyodide.http import open_url\n\n            return open_url(str(loc)).read()\n        with open(loc, encoding=\"utf-8\") as f:\n            return f.read()\n\n    def read_csv_text(rel: str):\n        return io.StringIO(read_text(rel))\n\n    return IN_BROWSER, read_csv_text, read_text\n\n\n@app.cell\ndef _(IN_BROWSER, json, mo, read_text):\n    if IN_BROWSER:\n        run_files = json.loads(read_text(\"runs/index.json\"))\n    else:\n        run_files = sorted(p.name for p in (mo.notebook_location() / \"runs\").glob(\"*.csv\"))\n    run_picker = mo.ui.dropdown(\n        options=run_files, value=run_files[-1], label=\"\u9078\u64c7\u8a55\u6e2c\u8a18\u9304\uff08run\uff09\"\n    )\n    return (run_picker,)\n\n\n@app.cell\ndef _(mo, run_picker):\n    is_demo = \"demo\" in run_picker.value\n    banner = (\n        mo.callout(\n            mo.md(\n                \"**\u6ce8\u610f\uff1a\u9019\u662f\u793a\u7bc4\u8cc7\u6599\uff0c\u4e26\u975e\u771f\u5be6\u6a21\u578b\u8f38\u51fa\u3002**\"\n                \"\u300c\u5be6\u969b\u300d\u4e00\u6b04\u7531\u4eba\u624b\u64b0\u5beb\uff0c\u4e26\u6545\u610f\u52a0\u5165\u932f\u8aa4\uff0c\u7528\u4f86\u793a\u7bc4\u5224\u5b9a\u898f\u5247\u8207\u4eba\u624b\u8986\u6838\u3002\"\n                \"\u63a5\u4e0a\u771f\u6a21\u578b\u5f8c\uff0c\u57f7\u884c `python run_eval.py` \u6703\u7522\u751f\u65b0\u7684 run \u6a94\u6848\u3002\"\n            ),\n            kind=\"warn\",\n        )\n        if is_demo\n        else mo.md(\"\")\n    )\n    mo.vstack(\n        [\n            mo.md(\n                \"# \u9999\u6e2f\u7528\u85e5\u5b89\u5168 AI \u8a55\u6e2c\\n\"\n                \"20 \u984c\u9999\u6e2f\u85e5\u7269\u898f\u7ba1\u5e38\u8b58\u984c\uff0c\u6bcf\u984c\u9644\u5b98\u65b9\u4f86\u6e90\u3002\"\n                \"\u56db\u6b04\uff1a**\u8f38\u5165**\uff08\u984c\u76ee\uff09\u3001**\u9810\u671f**\uff08\u5b98\u65b9\u7b54\u6848\uff09\u3001**\u5be6\u969b**\uff08\u6a21\u578b\u7b54\u6848\uff09\u3001**\u5224\u5b9a**\uff08PASS\uff0fFAIL\uff09\u3002\"\n            ),\n            run_picker,\n            banner,\n        ]\n    )\n    return\n\n\n@app.cell\ndef _(pd, read_csv_text, run_picker):\n    questions = pd.read_csv(read_csv_text(\"questions.csv\"), dtype=str).fillna(\"\")\n    run = pd.read_csv(read_csv_text(f\"runs/{run_picker.value}\"), dtype=str).fillna(\"\")\n\n    def norm(s: str) -\u003E str:\n        return \"\".join(str(s).lower().split())\n\n    def auto_judge(actual: str, keywords: str) -\u003E str:\n        \"\"\"\u95dc\u9375\u8a5e\u898f\u5247\uff1a\u4ee5 ; \u5206\u7d44\uff0c\u6bcf\u7d44\u90fd\u8981\u547d\u4e2d\uff1b\u7d44\u5167\u4ee5 | \u5206\u9694\uff0c\u547d\u4e2d\u5176\u4e00\u5373\u53ef\u3002\"\"\"\n        text = norm(actual)\n        groups = [g for g in keywords.split(\";\") if g.strip()]\n        ok = all(any(norm(alt) in text for alt in g.split(\"|\")) for g in groups)\n        return \"PASS\" if ok else \"FAIL\"\n\n    df = questions.merge(run, on=\"id\", how=\"left\").fillna(\"\")\n    df[\"\u81ea\u52d5\u5224\u5b9a\"] = [auto_judge(a, k) for a, k in zip(df[\"actual\"], df[\"keywords\"])]\n    df[\"\u5224\u5b9a\"] = [o.strip().upper() or a for o, a in zip(df[\"override\"], df[\"\u81ea\u52d5\u5224\u5b9a\"])]\n    df[\"\u4eba\u624b\u8986\u6838\"] = [\"\u662f\" if o.strip() else \"\" for o in df[\"override\"]]\n    return (df,)\n\n\n@app.cell\ndef _(df, mo):\n    n = len(df)\n    passed = int((df[\"\u5224\u5b9a\"] == \"PASS\").sum())\n    overridden = int((df[\"\u4eba\u624b\u8986\u6838\"] == \"\u662f\").sum())\n    mo.hstack(\n        [\n            mo.stat(value=f\"{passed} / {n}\", label=\"\u7e3d\u5206\"),\n            mo.stat(value=f\"{passed / n:.0%}\", label=\"\u6b63\u78ba\u7387\"),\n            mo.stat(value=str(overridden), label=\"\u4eba\u624b\u8986\u6838\u6539\u5224\"),\n        ],\n        justify=\"start\",\n    )\n    return\n\n\n@app.cell\ndef _(alt, df):\n    counts = df[\"\u5224\u5b9a\"].value_counts().reindex([\"PASS\", \"FAIL\"], fill_value=0).reset_index()\n    counts.columns = [\"\u5224\u5b9a\", \"\u984c\u6578\"]\n    chart = (\n        alt.Chart(counts)\n        .mark_bar()\n        .encode(\n            x=alt.X(\"\u5224\u5b9a:N\", sort=[\"PASS\", \"FAIL\"]),\n            y=alt.Y(\"\u984c\u6578:Q\"),\n            color=alt.Color(\n                \"\u5224\u5b9a:N\",\n                scale=alt.Scale(domain=[\"PASS\", \"FAIL\"], range=[\"#2e7d32\", \"#c62828\"]),\n                legend=None,\n            ),\n        )\n        .properties(width=300, height=220, title=\"\u5224\u5b9a\u5206\u4f48\")\n    )\n    chart\n    return\n\n\n@app.cell\ndef _(df, mo):\n    table = df.rename(\n        columns={\"question\": \"\u8f38\u5165\", \"expected\": \"\u9810\u671f\", \"actual\": \"\u5be6\u969b\", \"source\": \"\u4f86\u6e90\", \"note\": \"\u5099\u8a3b\"}\n    )[[\"id\", \"\u8f38\u5165\", \"\u9810\u671f\", \"\u5be6\u969b\", \"\u5224\u5b9a\", \"\u81ea\u52d5\u5224\u5b9a\", \"\u4eba\u624b\u8986\u6838\", \"\u4f86\u6e90\", \"\u5099\u8a3b\"]]\n    mo.vstack([mo.md(\"## \u5404\u984c\u5224\u5b9a\"), mo.ui.table(table, selection=None, page_size=20)])\n    return\n\n\n@app.cell\ndef _(mo):\n    mo.md(r\"\"\"\n    ## \u5224\u5b9a\u898f\u5247\n    - `questions.csv` \u7684 `keywords` \u6b04\uff1a\u4ee5 `;` \u5206\u7d44\uff0c\u6bcf\u7d44\u90fd\u8981\u547d\u4e2d\uff1b\u7d44\u5167\u4ee5 `|` \u5206\u9694\u540c\u7fa9\u8a5e\uff0c\u547d\u4e2d\u5176\u4e00\u5373\u53ef\uff08\u4e0d\u5206\u5927\u5c0f\u5beb\u3001\u5ffd\u7565\u7a7a\u683c\uff09\u3002\n    - run \u6a94\u6848\u7684 `override` \u6b04\u586b `PASS` \u6216 `FAIL`\uff0c\u5373\u4ee5\u4eba\u624b\u8986\u6838\u53d6\u4ee3\u81ea\u52d5\u5224\u5b9a\u3002\n    - \u95dc\u9375\u8a5e\u5339\u914d\u53ea\u662f\u7c97\u7be9\uff0c\u4f8b\u5982\u7b2c 20 \u984c\u7684\u793a\u7bc4\u7b54\u6848\u542b\u300c\u4e0d\u80fd\u300d\u4e8c\u5b57\u800c\u88ab\u8aa4\u5224\u70ba PASS\uff0c\u9808\u4eba\u624b\u6539\u5224\u3002\n    \"\"\")\n    return\n\n\nif __name__ == \"__main__\":\n    app.run()\n",
+        }),
+        writable: false,
+        configurable: false,
+    });
+</script>
+<marimo-code hidden="">%23%20%2F%2F%2F%20script%0A%23%20requires-python%20%3D%20%22%3E%3D3.11%22%0A%23%20dependencies%20%3D%20%5B%0A%23%20%20%20%20%20%22marimo%22%2C%0A%23%20%20%20%20%20%22pandas%22%2C%0A%23%20%20%20%20%20%22altair%22%2C%0A%23%20%5D%0A%23%20%2F%2F%2F%0A%0Aimport%20marimo%0A%0A__generated_with%20%3D%20%220.25.1%22%0Aapp%20%3D%20marimo.App(width%3D%22medium%22)%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20marimo%20as%20mo%0A%0A%20%20%20%20return%20(mo%2C)%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20io%0A%20%20%20%20import%20json%0A%20%20%20%20import%20sys%0A%0A%20%20%20%20import%20altair%20as%20alt%0A%20%20%20%20import%20pandas%20as%20pd%0A%0A%20%20%20%20return%20alt%2C%20io%2C%20json%2C%20pd%2C%20sys%0A%0A%0A%40app.cell%0Adef%20_(io%2C%20mo%2C%20sys)%3A%0A%20%20%20%20IN_BROWSER%20%3D%20sys.platform%20%3D%3D%20%22emscripten%22%0A%0A%20%20%20%20def%20read_text(rel%3A%20str)%20-%3E%20str%3A%0A%20%20%20%20%20%20%20%20%22%22%22%E6%9C%AC%E5%9C%B0%E8%AE%80%E6%AA%94%EF%BC%9B%E5%9C%A8%E7%80%8F%E8%A6%BD%E5%99%A8%EF%BC%88WASM%EF%BC%89%E5%85%A7%E5%89%87%E5%BE%9E%E5%90%8C%E4%B8%80%E7%B6%B2%E5%9D%80%E8%AE%80%E5%8F%96%E3%80%82%22%22%22%0A%20%20%20%20%20%20%20%20loc%20%3D%20mo.notebook_location()%20%2F%20rel%0A%20%20%20%20%20%20%20%20if%20IN_BROWSER%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20from%20pyodide.http%20import%20open_url%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20open_url(str(loc)).read()%0A%20%20%20%20%20%20%20%20with%20open(loc%2C%20encoding%3D%22utf-8%22)%20as%20f%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20f.read()%0A%0A%20%20%20%20def%20read_csv_text(rel%3A%20str)%3A%0A%20%20%20%20%20%20%20%20return%20io.StringIO(read_text(rel))%0A%0A%20%20%20%20return%20IN_BROWSER%2C%20read_csv_text%2C%20read_text%0A%0A%0A%40app.cell%0Adef%20_(IN_BROWSER%2C%20json%2C%20mo%2C%20read_text)%3A%0A%20%20%20%20if%20IN_BROWSER%3A%0A%20%20%20%20%20%20%20%20run_files%20%3D%20json.loads(read_text(%22runs%2Findex.json%22))%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20run_files%20%3D%20sorted(p.name%20for%20p%20in%20(mo.notebook_location()%20%2F%20%22runs%22).glob(%22*.csv%22))%0A%20%20%20%20run_picker%20%3D%20mo.ui.dropdown(%0A%20%20%20%20%20%20%20%20options%3Drun_files%2C%20value%3Drun_files%5B-1%5D%2C%20label%3D%22%E9%81%B8%E6%93%87%E8%A9%95%E6%B8%AC%E8%A8%98%E9%8C%84%EF%BC%88run%EF%BC%89%22%0A%20%20%20%20)%0A%20%20%20%20return%20(run_picker%2C)%0A%0A%0A%40app.cell%0Adef%20_(mo%2C%20run_picker)%3A%0A%20%20%20%20is_demo%20%3D%20%22demo%22%20in%20run_picker.value%0A%20%20%20%20banner%20%3D%20(%0A%20%20%20%20%20%20%20%20mo.callout(%0A%20%20%20%20%20%20%20%20%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22**%E6%B3%A8%E6%84%8F%EF%BC%9A%E9%80%99%E6%98%AF%E7%A4%BA%E7%AF%84%E8%B3%87%E6%96%99%EF%BC%8C%E4%B8%A6%E9%9D%9E%E7%9C%9F%E5%AF%A6%E6%A8%A1%E5%9E%8B%E8%BC%B8%E5%87%BA%E3%80%82**%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%E3%80%8C%E5%AF%A6%E9%9A%9B%E3%80%8D%E4%B8%80%E6%AC%84%E7%94%B1%E4%BA%BA%E6%89%8B%E6%92%B0%E5%AF%AB%EF%BC%8C%E4%B8%A6%E6%95%85%E6%84%8F%E5%8A%A0%E5%85%A5%E9%8C%AF%E8%AA%A4%EF%BC%8C%E7%94%A8%E4%BE%86%E7%A4%BA%E7%AF%84%E5%88%A4%E5%AE%9A%E8%A6%8F%E5%89%87%E8%88%87%E4%BA%BA%E6%89%8B%E8%A6%86%E6%A0%B8%E3%80%82%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%E6%8E%A5%E4%B8%8A%E7%9C%9F%E6%A8%A1%E5%9E%8B%E5%BE%8C%EF%BC%8C%E5%9F%B7%E8%A1%8C%20%60python%20run_eval.py%60%20%E6%9C%83%E7%94%A2%E7%94%9F%E6%96%B0%E7%9A%84%20run%20%E6%AA%94%E6%A1%88%E3%80%82%22%0A%20%20%20%20%20%20%20%20%20%20%20%20)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20kind%3D%22warn%22%2C%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20%20%20%20%20if%20is_demo%0A%20%20%20%20%20%20%20%20else%20mo.md(%22%22)%0A%20%20%20%20)%0A%20%20%20%20mo.vstack(%0A%20%20%20%20%20%20%20%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%23%20%E9%A6%99%E6%B8%AF%E7%94%A8%E8%97%A5%E5%AE%89%E5%85%A8%20AI%20%E8%A9%95%E6%B8%AC%5Cn%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2220%20%E9%A1%8C%E9%A6%99%E6%B8%AF%E8%97%A5%E7%89%A9%E8%A6%8F%E7%AE%A1%E5%B8%B8%E8%AD%98%E9%A1%8C%EF%BC%8C%E6%AF%8F%E9%A1%8C%E9%99%84%E5%AE%98%E6%96%B9%E4%BE%86%E6%BA%90%E3%80%82%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%E5%9B%9B%E6%AC%84%EF%BC%9A**%E8%BC%B8%E5%85%A5**%EF%BC%88%E9%A1%8C%E7%9B%AE%EF%BC%89%E3%80%81**%E9%A0%90%E6%9C%9F**%EF%BC%88%E5%AE%98%E6%96%B9%E7%AD%94%E6%A1%88%EF%BC%89%E3%80%81**%E5%AF%A6%E9%9A%9B**%EF%BC%88%E6%A8%A1%E5%9E%8B%E7%AD%94%E6%A1%88%EF%BC%89%E3%80%81**%E5%88%A4%E5%AE%9A**%EF%BC%88PASS%EF%BC%8FFAIL%EF%BC%89%E3%80%82%22%0A%20%20%20%20%20%20%20%20%20%20%20%20)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20run_picker%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20banner%2C%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(pd%2C%20read_csv_text%2C%20run_picker)%3A%0A%20%20%20%20questions%20%3D%20pd.read_csv(read_csv_text(%22questions.csv%22)%2C%20dtype%3Dstr).fillna(%22%22)%0A%20%20%20%20run%20%3D%20pd.read_csv(read_csv_text(f%22runs%2F%7Brun_picker.value%7D%22)%2C%20dtype%3Dstr).fillna(%22%22)%0A%0A%20%20%20%20def%20norm(s%3A%20str)%20-%3E%20str%3A%0A%20%20%20%20%20%20%20%20return%20%22%22.join(str(s).lower().split())%0A%0A%20%20%20%20def%20auto_judge(actual%3A%20str%2C%20keywords%3A%20str)%20-%3E%20str%3A%0A%20%20%20%20%20%20%20%20%22%22%22%E9%97%9C%E9%8D%B5%E8%A9%9E%E8%A6%8F%E5%89%87%EF%BC%9A%E4%BB%A5%20%3B%20%E5%88%86%E7%B5%84%EF%BC%8C%E6%AF%8F%E7%B5%84%E9%83%BD%E8%A6%81%E5%91%BD%E4%B8%AD%EF%BC%9B%E7%B5%84%E5%85%A7%E4%BB%A5%20%7C%20%E5%88%86%E9%9A%94%EF%BC%8C%E5%91%BD%E4%B8%AD%E5%85%B6%E4%B8%80%E5%8D%B3%E5%8F%AF%E3%80%82%22%22%22%0A%20%20%20%20%20%20%20%20text%20%3D%20norm(actual)%0A%20%20%20%20%20%20%20%20groups%20%3D%20%5Bg%20for%20g%20in%20keywords.split(%22%3B%22)%20if%20g.strip()%5D%0A%20%20%20%20%20%20%20%20ok%20%3D%20all(any(norm(alt)%20in%20text%20for%20alt%20in%20g.split(%22%7C%22))%20for%20g%20in%20groups)%0A%20%20%20%20%20%20%20%20return%20%22PASS%22%20if%20ok%20else%20%22FAIL%22%0A%0A%20%20%20%20df%20%3D%20questions.merge(run%2C%20on%3D%22id%22%2C%20how%3D%22left%22).fillna(%22%22)%0A%20%20%20%20df%5B%22%E8%87%AA%E5%8B%95%E5%88%A4%E5%AE%9A%22%5D%20%3D%20%5Bauto_judge(a%2C%20k)%20for%20a%2C%20k%20in%20zip(df%5B%22actual%22%5D%2C%20df%5B%22keywords%22%5D)%5D%0A%20%20%20%20df%5B%22%E5%88%A4%E5%AE%9A%22%5D%20%3D%20%5Bo.strip().upper()%20or%20a%20for%20o%2C%20a%20in%20zip(df%5B%22override%22%5D%2C%20df%5B%22%E8%87%AA%E5%8B%95%E5%88%A4%E5%AE%9A%22%5D)%5D%0A%20%20%20%20df%5B%22%E4%BA%BA%E6%89%8B%E8%A6%86%E6%A0%B8%22%5D%20%3D%20%5B%22%E6%98%AF%22%20if%20o.strip()%20else%20%22%22%20for%20o%20in%20df%5B%22override%22%5D%5D%0A%20%20%20%20return%20(df%2C)%0A%0A%0A%40app.cell%0Adef%20_(df%2C%20mo)%3A%0A%20%20%20%20n%20%3D%20len(df)%0A%20%20%20%20passed%20%3D%20int((df%5B%22%E5%88%A4%E5%AE%9A%22%5D%20%3D%3D%20%22PASS%22).sum())%0A%20%20%20%20overridden%20%3D%20int((df%5B%22%E4%BA%BA%E6%89%8B%E8%A6%86%E6%A0%B8%22%5D%20%3D%3D%20%22%E6%98%AF%22).sum())%0A%20%20%20%20mo.hstack(%0A%20%20%20%20%20%20%20%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20mo.stat(value%3Df%22%7Bpassed%7D%20%2F%20%7Bn%7D%22%2C%20label%3D%22%E7%B8%BD%E5%88%86%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20mo.stat(value%3Df%22%7Bpassed%20%2F%20n%3A.0%25%7D%22%2C%20label%3D%22%E6%AD%A3%E7%A2%BA%E7%8E%87%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20mo.stat(value%3Dstr(overridden)%2C%20label%3D%22%E4%BA%BA%E6%89%8B%E8%A6%86%E6%A0%B8%E6%94%B9%E5%88%A4%22)%2C%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20justify%3D%22start%22%2C%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(alt%2C%20df)%3A%0A%20%20%20%20counts%20%3D%20df%5B%22%E5%88%A4%E5%AE%9A%22%5D.value_counts().reindex(%5B%22PASS%22%2C%20%22FAIL%22%5D%2C%20fill_value%3D0).reset_index()%0A%20%20%20%20counts.columns%20%3D%20%5B%22%E5%88%A4%E5%AE%9A%22%2C%20%22%E9%A1%8C%E6%95%B8%22%5D%0A%20%20%20%20chart%20%3D%20(%0A%20%20%20%20%20%20%20%20alt.Chart(counts)%0A%20%20%20%20%20%20%20%20.mark_bar()%0A%20%20%20%20%20%20%20%20.encode(%0A%20%20%20%20%20%20%20%20%20%20%20%20x%3Dalt.X(%22%E5%88%A4%E5%AE%9A%3AN%22%2C%20sort%3D%5B%22PASS%22%2C%20%22FAIL%22%5D)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20y%3Dalt.Y(%22%E9%A1%8C%E6%95%B8%3AQ%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3Dalt.Color(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%E5%88%A4%E5%AE%9A%3AN%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20scale%3Dalt.Scale(domain%3D%5B%22PASS%22%2C%20%22FAIL%22%5D%2C%20range%3D%5B%22%232e7d32%22%2C%20%22%23c62828%22%5D)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20legend%3DNone%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20)%2C%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20%20%20%20%20.properties(width%3D300%2C%20height%3D220%2C%20title%3D%22%E5%88%A4%E5%AE%9A%E5%88%86%E4%BD%88%22)%0A%20%20%20%20)%0A%20%20%20%20chart%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(df%2C%20mo)%3A%0A%20%20%20%20table%20%3D%20df.rename(%0A%20%20%20%20%20%20%20%20columns%3D%7B%22question%22%3A%20%22%E8%BC%B8%E5%85%A5%22%2C%20%22expected%22%3A%20%22%E9%A0%90%E6%9C%9F%22%2C%20%22actual%22%3A%20%22%E5%AF%A6%E9%9A%9B%22%2C%20%22source%22%3A%20%22%E4%BE%86%E6%BA%90%22%2C%20%22note%22%3A%20%22%E5%82%99%E8%A8%BB%22%7D%0A%20%20%20%20)%5B%5B%22id%22%2C%20%22%E8%BC%B8%E5%85%A5%22%2C%20%22%E9%A0%90%E6%9C%9F%22%2C%20%22%E5%AF%A6%E9%9A%9B%22%2C%20%22%E5%88%A4%E5%AE%9A%22%2C%20%22%E8%87%AA%E5%8B%95%E5%88%A4%E5%AE%9A%22%2C%20%22%E4%BA%BA%E6%89%8B%E8%A6%86%E6%A0%B8%22%2C%20%22%E4%BE%86%E6%BA%90%22%2C%20%22%E5%82%99%E8%A8%BB%22%5D%5D%0A%20%20%20%20mo.vstack(%5Bmo.md(%22%23%23%20%E5%90%84%E9%A1%8C%E5%88%A4%E5%AE%9A%22)%2C%20mo.ui.table(table%2C%20selection%3DNone%2C%20page_size%3D20)%5D)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(r%22%22%22%0A%20%20%20%20%23%23%20%E5%88%A4%E5%AE%9A%E8%A6%8F%E5%89%87%0A%20%20%20%20-%20%60questions.csv%60%20%E7%9A%84%20%60keywords%60%20%E6%AC%84%EF%BC%9A%E4%BB%A5%20%60%3B%60%20%E5%88%86%E7%B5%84%EF%BC%8C%E6%AF%8F%E7%B5%84%E9%83%BD%E8%A6%81%E5%91%BD%E4%B8%AD%EF%BC%9B%E7%B5%84%E5%85%A7%E4%BB%A5%20%60%7C%60%20%E5%88%86%E9%9A%94%E5%90%8C%E7%BE%A9%E8%A9%9E%EF%BC%8C%E5%91%BD%E4%B8%AD%E5%85%B6%E4%B8%80%E5%8D%B3%E5%8F%AF%EF%BC%88%E4%B8%8D%E5%88%86%E5%A4%A7%E5%B0%8F%E5%AF%AB%E3%80%81%E5%BF%BD%E7%95%A5%E7%A9%BA%E6%A0%BC%EF%BC%89%E3%80%82%0A%20%20%20%20-%20run%20%E6%AA%94%E6%A1%88%E7%9A%84%20%60override%60%20%E6%AC%84%E5%A1%AB%20%60PASS%60%20%E6%88%96%20%60FAIL%60%EF%BC%8C%E5%8D%B3%E4%BB%A5%E4%BA%BA%E6%89%8B%E8%A6%86%E6%A0%B8%E5%8F%96%E4%BB%A3%E8%87%AA%E5%8B%95%E5%88%A4%E5%AE%9A%E3%80%82%0A%20%20%20%20-%20%E9%97%9C%E9%8D%B5%E8%A9%9E%E5%8C%B9%E9%85%8D%E5%8F%AA%E6%98%AF%E7%B2%97%E7%AF%A9%EF%BC%8C%E4%BE%8B%E5%A6%82%E7%AC%AC%2020%20%E9%A1%8C%E7%9A%84%E7%A4%BA%E7%AF%84%E7%AD%94%E6%A1%88%E5%90%AB%E3%80%8C%E4%B8%8D%E8%83%BD%E3%80%8D%E4%BA%8C%E5%AD%97%E8%80%8C%E8%A2%AB%E8%AA%A4%E5%88%A4%E7%82%BA%20PASS%EF%BC%8C%E9%A0%88%E4%BA%BA%E6%89%8B%E6%94%B9%E5%88%A4%E3%80%82%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A</marimo-code></head>
+  <body>
+    <div id="root"></div>
+    <script data-marimo="true">
+      Object.defineProperty(window, "__MARIMO_MOUNT_CONFIG__", {
+        value: Object.freeze({
+            "filename": "notebook.py",
+            "cwd": "",
+            "lspWorkspace": null,
+            "mode": "read",
+            "version": "0.25.1",
+            "serverToken": "unused",
+            "config": {"ai": {"allow_provider_config": true, "custom_providers": {}, "enabled": true, "models": {"custom_models": [], "displayed_models": []}}, "completion": {"activate_on_typing": true, "auto_close_pairs": true, "copilot": false, "signature_hint_on_typing": false}, "diagnostics": {"sql_linter": true}, "display": {"cell_output": "below", "code_editor_font_size": 14, "code_lens": true, "dataframes": "rich", "default_table_max_columns": 50, "default_table_page_size": 10, "default_width": "medium", "reference_highlighting": true, "theme": "light"}, "formatting": {"line_length": 79}, "keymap": {"overrides": {}, "preset": "default"}, "language_servers": {"pylsp": {"enable_flake8": false, "enable_mypy": true, "enable_pydocstyle": false, "enable_pyflakes": false, "enable_pylint": false, "enable_ruff": true, "enabled": false}}, "mcp": {"mcpServers": {}, "presets": []}, "package_management": {"manager": "pip"}, "runtime": {"auto_instantiate": false, "auto_reload": "off", "default_csv_encoding": "utf-8", "default_sql_output": "auto", "on_cell_change": "autorun", "output_max_bytes": 8000000, "reactive_tests": true, "show_tracebacks": false, "std_stream_max_bytes": 1000000, "watcher_on_save": "lazy"}, "save": {"autosave": "off", "autosave_delay": 1000, "format_on_save": false}, "server": {"browser": "default", "follow_symlink": false}, "snippets": {"custom_paths": [], "include_default_snippets": true}},
+            "configOverrides": {},
+            "appConfig": {"sql_output": "auto", "width": "medium"},
+            "layout": null,
+            "view": {"showAppCode": false},
+            "notebook": null,
+            "session": null,
+            "runtimeConfig": null
+        }),
+        writable: false,
+        configurable: false,
+      });
+    </script>
+  </body>
+</html>

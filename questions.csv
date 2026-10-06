@@ -1,0 +1,21 @@
+id,question,expected,source,keywords
+1,在香港，藥劑製品（西藥）在售賣前須向哪個法定機構註冊？,香港藥劑業及毒藥管理局（Pharmacy and Poisons Board）,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/knowledge_on_medicines/general_knowledge_on_medicine_registration.html,藥劑業及毒藥管理局|Pharmacy and Poisons Board
+2,香港註冊藥劑製品的註冊編號是甚麼格式？,HK-XXXXX（HK- 加五位數字）,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/knowledge_on_medicines/general_knowledge_on_medicine_registration.html,HK-
+3,在香港售賣未經註冊的藥劑製品，最高刑罰是甚麼？,第6級罰款（10萬元）及監禁2年,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,"10萬|100,000|100000;2年|兩年|二年"
+4,含第1部毒藥的藥劑製品可以在哪裏、以甚麼條件出售？,只可在獲授權毒藥銷售商（藥房）處所，由註冊藥劑師出售或在其在場及監督下出售,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,藥房|獲授權毒藥銷售商;藥劑師
+5,列載毒藥銷售商（俗稱藥行）可否出售含第1部毒藥的藥物？,不可以；藥行只可出售非毒藥及第2部毒藥,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,不可|不能;第2部
+6,出售含第1部附表3毒藥（處方藥）的藥物須具備甚麼？,註冊醫生、註冊牙醫或註冊獸醫發出的處方,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,處方
+7,出售含第1部附表1毒藥的藥物，藥房須額外做甚麼？,在毒藥登記冊記錄售賣日期、購買者姓名、身份證號碼、地址及簽署等,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,毒藥登記冊|毒藥冊|毒藥記錄冊|poisons book|記錄;身份證
+8,自2016年8月5日起，含第3附表毒藥的藥物標籤須印上甚麼字眼？,「處方藥物 Prescription Drug」,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,處方藥物|Prescription Drug
+9,自2016年8月5日起，含第1部毒藥（不屬第3附表）的藥物標籤須印上甚麼字眼？,「監督售賣藥物 Drug under Supervised Sales」,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,監督售賣藥物|Supervised Sales
+10,自2024年1月26日起，含少於0.2%可待因的非處方藥物受甚麼管制？,列為第1部附表1毒藥；藥房出售時須在毒藥登記冊記錄購買者資料，包括身份證號碼,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,附表1|第1附表|Schedule 1;身份證
+11,抗生素受哪一條香港法例規管？是否須憑處方？,《抗生素條例》（第137章）；屬處方藥物,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,137|抗生素條例;處方
+12,哪類店鋪獲准使用或展示「Rx」標誌？,只有獲授權毒藥銷售商（藥房）；藥行不得使用,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,藥房|獲授權毒藥銷售商
+13,藥房須把已配發的處方保留多久？,2年,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,2年|兩年|二年
+14,同一張處方可否配發多於一次？,除非處方者在處方上註明可配發的次數或間隔，否則只可配發一次,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,一次|1次
+15,香港市民經郵寄進口藥劑製品自用，衞生署會否發出進口許可證？,不會；衞生署不向市民發出郵寄自用藥物的進出口許可證,https://www.drugoffice.gov.hk/eps/do/en/consumer/news_informations/faq.html,不會|不發|不予
+16,香港註冊中成藥的註冊編號是甚麼格式？,HKC-XXXXX（HKC 加五位數字）,https://www.cmro.gov.hk/html/eng/useful_information/public_health/pamphlet/Purchasing_Proprietary_Chinese_Medicines.html,HKC
+17,中成藥須向哪個機構註冊，方可在香港銷售、進口或管有？,香港中醫藥管理委員會轄下的中藥組,https://www.info.gov.hk/gia/general/202506/24/P2025062400271.htm,中藥組|中醫藥管理委員會|Chinese Medicines Board
+18,中成藥過渡性註冊（HKP）安排何時結束？,2025年6月30日,https://www.info.gov.hk/gia/general/202506/24/P2025062400271.htm,2025;6月30日|6/30|30 June|June 30
+19,《不良醫藥廣告條例》是香港法例第幾章？,第231章,https://www.elegislation.gov.hk/hk/cap231!en,231
+20,根據《不良醫藥廣告條例》附表1，可否刊登廣告宣傳藥物可治療良性或惡性腫瘤？,不可以；屬禁止宣傳的疾病，沒有任何例外,https://www.drugoffice.gov.hk/eps/do/en/pharmaceutical_trade/other_useful_information/umao.html,不可|不能|禁止
